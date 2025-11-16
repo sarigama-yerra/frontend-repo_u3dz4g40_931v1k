@@ -1,5 +1,6 @@
 import React from 'react'
 import { Bot, Headphones, BarChart3, Workflow } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const services = [
   {
@@ -27,6 +28,10 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className="relative w-full bg-[var(--brand-bg)] py-20">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(500px_200px_at_20%_0%,rgba(37,99,235,0.08),transparent_60%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-64 bg-[radial-gradient(500px_200px_at_80%_100%,rgba(56,189,248,0.08),transparent_60%)]" />
+      </div>
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 flex items-end justify-between">
           <div>
@@ -38,13 +43,20 @@ export default function Services() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="group rounded-2xl border border-[var(--brand-border)] p-6 transition-all hover:shadow-lg bg-[var(--brand-surface)]">
-              <div className="mb-4 inline-flex rounded-xl bg-gradient-to-br from-[var(--gradient-1)] via-[var(--gradient-2)] to-[var(--gradient-3)] p-3 text-white">
+            <motion.div
+              key={title}
+              initial={{ y: 12, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="group rounded-2xl border border-[var(--brand-border)] p-6 transition-all hover:shadow-xl hover:-translate-y-1 bg-[var(--brand-surface)]"
+            >
+              <div className="mb-4 inline-flex rounded-xl bg-gradient-to-br from-[var(--gradient-1)] via-[var(--gradient-2)] to-[var(--gradient-3)] p-3 text-white shadow-sm">
                 <Icon className="h-6 w-6" />
               </div>
               <h3 className="text-lg font-semibold text-[var(--brand-ink)]">{title}</h3>
               <p className="mt-2 text-sm text-[var(--brand-ink-muted)]">{desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const logos = [
   'Acme Co.',
@@ -27,7 +28,14 @@ export default function Work() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {[1,2,3].map((i) => (
-            <div key={i} className="group overflow-hidden rounded-2xl border border-[var(--brand-border)] bg-[var(--brand-surface)]">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+              className="group overflow-hidden rounded-2xl border border-[var(--brand-border)] bg-[var(--brand-surface)]"
+            >
               <div className="aspect-[16/10] bg-gradient-to-br from-[var(--gradient-1-100)] via-[var(--gradient-2-100)] to-[var(--gradient-3-100)]" />
               <div className="p-6">
                 <div className="text-xs uppercase tracking-wide text-[var(--brand-ink-subtle)]">Case Study</div>
@@ -35,15 +43,22 @@ export default function Work() {
                 <p className="mt-2 text-sm text-[var(--brand-ink-muted)]">We built a multilingual voice agent handling 65% of inquiries end-to-end, integrated with their order systems.</p>
                 <a href="#cta" className="mt-4 inline-flex text-sm font-medium text-[var(--brand-ink)] hover:underline">Read more →</a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6">
           {logos.map((name) => (
-            <div key={name} className="flex items-center justify-center rounded-lg border border-[var(--brand-border)] bg-[var(--brand-surface)] p-4 text-sm text-[var(--brand-ink-muted)]">
+            <motion.div
+              key={name}
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.35 }}
+              className="flex items-center justify-center rounded-lg border border-[var(--brand-border)] bg-[var(--brand-surface)] p-4 text-sm text-[var(--brand-ink-muted)]"
+            >
               {name}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
