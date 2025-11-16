@@ -33,7 +33,7 @@ export default function Work() {
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, ease: 'easeOut' }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="group overflow-hidden rounded-2xl border border-[var(--brand-border)] bg-[var(--brand-surface)]"
             >
               <div className="aspect-[16/10] bg-gradient-to-br from-[var(--gradient-1-100)] via-[var(--gradient-2-100)] to-[var(--gradient-3-100)]" />

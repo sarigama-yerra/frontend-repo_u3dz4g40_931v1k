@@ -8,12 +8,12 @@ export default function Hero() {
 
   const fadeUp = {
     hidden: { opacity: 0, y: 16 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
   }
 
   const stagger = {
     hidden: {},
-    show: { transition: { staggerChildren: 0.12 } },
+    show: { transition: { staggerChildren: 0.14 } },
   }
 
   return (
@@ -26,7 +26,7 @@ export default function Hero() {
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="h-8 w-8 rounded-full bg-gradient-to-br from-[var(--gradient-1)] via-[var(--gradient-2)] to-[var(--gradient-3)] shadow-sm"
               />
               <span className="text-xl font-bold tracking-tight text-[var(--brand-ink)]">azen</span>
@@ -35,7 +35,7 @@ export default function Hero() {
               <a href="#services" className="hover:text-[var(--brand-ink)] transition-colors">Services</a>
               <a href="#work" className="hover:text-[var(--brand-ink)] transition-colors">Work</a>
               <a href="#contact" className="hover:text-[var(--brand-ink)] transition-colors">Contact</a>
-              <a href="#cta" className="inline-flex items-center rounded-full bg-[var(--brand-primary)] px-4 py-2 text-white hover:bg-[var(--brand-primary-hover)] transition-colors">Book a demo</a>
+              <a href="#cta" className="hover-shine inline-flex items-center rounded-full bg-[var(--brand-primary)] px-4 py-2 text-white shadow-sm hover:bg-[var(--brand-primary-hover)] transition-colors">Book a demo</a>
             </nav>
             <button className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-md border border-[var(--brand-border)]" onClick={() => setOpen(!open)} aria-label="Toggle menu">
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -51,7 +51,7 @@ export default function Hero() {
               <a href="#services" className="px-2 py-2 rounded hover:bg-[var(--brand-surface-2)]" onClick={() => setOpen(false)}>Services</a>
               <a href="#work" className="px-2 py-2 rounded hover:bg-[var(--brand-surface-2)]" onClick={() => setOpen(false)}>Work</a>
               <a href="#contact" className="px-2 py-2 rounded hover:bg-[var(--brand-surface-2)]" onClick={() => setOpen(false)}>Contact</a>
-              <a href="#cta" className="px-2 py-2 rounded bg-[var(--brand-primary)] text-white text-center" onClick={() => setOpen(false)}>Book a demo</a>
+              <a href="#cta" className="px-2 py-2 rounded bg-[var(--brand-primary)] text-white text-center hover:bg-[var(--brand-primary-hover)]" onClick={() => setOpen(false)}>Book a demo</a>
             </motion.div>
           )}
         </div>
@@ -80,7 +80,7 @@ export default function Hero() {
             Azen designs, trains, and deploys AI agents that convert. From concierge voice flows to autonomous support, we ship production systems that sound human—backed by measurable ROI.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
-            <motion.a whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }} href="#cta" className="inline-flex items-center justify-center rounded-full bg-[var(--brand-primary)] px-5 py-3 text-white shadow-sm hover:bg-[var(--brand-primary-hover)] transition-colors">
+            <motion.a whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }} href="#cta" className="hover-shine inline-flex items-center justify-center rounded-full bg-[var(--brand-primary)] px-5 py-3 text-white shadow-sm hover:bg-[var(--brand-primary-hover)] transition-colors">
               Get a proposal
             </motion.a>
             <motion.a whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }} href="#work" className="inline-flex items-center justify-center rounded-full border border-[var(--brand-border-strong)] bg-[var(--brand-surface)] px-5 py-3 text-[var(--brand-ink)] hover:bg-[var(--brand-surface-2)] transition-colors">

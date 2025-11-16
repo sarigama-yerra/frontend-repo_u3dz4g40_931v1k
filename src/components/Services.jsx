@@ -38,7 +38,7 @@ export default function Services() {
             <h2 className="text-3xl font-bold tracking-tight text-[var(--brand-ink)] sm:text-4xl">What we do</h2>
             <p className="mt-2 text-[color:var(--brand-ink-muted)] max-w-xl">From idea to production in weeks. We design, build, and operate AI agents that delight users and deliver results.</p>
           </div>
-          <a href="#cta" className="hidden sm:inline-flex items-center rounded-full bg-[var(--brand-primary)] px-4 py-2 text-white hover:bg-[var(--brand-primary-hover)]">Book a demo</a>
+          <a href="#cta" className="hidden sm:inline-flex items-center rounded-full bg-[var(--brand-primary)] px-4 py-2 text-white hover:bg-[var(--brand-primary-hover)] hover-shine">Book a demo</a>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -48,7 +48,7 @@ export default function Services() {
               initial={{ y: 12, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.4, ease: 'easeOut' }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               className="group rounded-2xl border border-[var(--brand-border)] p-6 transition-all hover:shadow-xl hover:-translate-y-1 bg-[var(--brand-surface)]"
             >
               <div className="mb-4 inline-flex rounded-xl bg-gradient-to-br from-[var(--gradient-1)] via-[var(--gradient-2)] to-[var(--gradient-3)] p-3 text-white shadow-sm">
