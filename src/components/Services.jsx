@@ -26,24 +26,24 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative w-full bg-white py-20">
+    <section id="services" className="relative w-full bg-[var(--brand-bg)] py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 flex items-end justify-between">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">What we do</h2>
-            <p className="mt-2 text-gray-600 max-w-xl">From idea to production in weeks. We design, build, and operate AI agents that delight users and deliver results.</p>
+            <h2 className="text-3xl font-bold tracking-tight text-[var(--brand-ink)] sm:text-4xl">What we do</h2>
+            <p className="mt-2 text-[color:var(--brand-ink-muted)] max-w-xl">From idea to production in weeks. We design, build, and operate AI agents that delight users and deliver results.</p>
           </div>
-          <a href="#cta" className="hidden sm:inline-flex items-center rounded-full bg-gray-900 px-4 py-2 text-white hover:bg-gray-800">Book a demo</a>
+          <a href="#cta" className="hidden sm:inline-flex items-center rounded-full bg-[var(--brand-primary)] px-4 py-2 text-white hover:bg-[var(--brand-primary-hover)]">Book a demo</a>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="group rounded-2xl border border-gray-200 p-6 transition-all hover:shadow-lg bg-white">
-              <div className="mb-4 inline-flex rounded-xl bg-gradient-to-br from-purple-500 via-blue-500 to-amber-400 p-3 text-white">
+            <div key={title} className="group rounded-2xl border border-[var(--brand-border)] p-6 transition-all hover:shadow-lg bg-[var(--brand-surface)]">
+              <div className="mb-4 inline-flex rounded-xl bg-gradient-to-br from-[var(--gradient-1)] via-[var(--gradient-2)] to-[var(--gradient-3)] p-3 text-white">
                 <Icon className="h-6 w-6" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{desc}</p>
+              <h3 className="text-lg font-semibold text-[var(--brand-ink)]">{title}</h3>
+              <p className="mt-2 text-sm text-[var(--brand-ink-muted)]">{desc}</p>
             </div>
           ))}
         </div>
